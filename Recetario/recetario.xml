@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<recetario>
+    <recetas comensales="4" duracion="60" nombre="Macarrones">
+        <ingredientes cantidad="6.0" medida="KILOS" nombre="Carne de ternera"/>
+        <ingredientes cantidad="2.0" medida="CUCHARADITAS" nombre="Aceite"/>
+        <ingredientes cantidad="300.0" medida="GRAMOS" nombre="Macarrones"/>
+        <ingredientes cantidad="4.0" medida="KILOS" nombre="Tomates"/>
+        <instrucciones descripcion="Picar la carne"/>
+        <instrucciones descripcion="Guisar los macarrones"/>
+        <instrucciones descripcion="Hacer la salsa de tomate"/>
+        <instrucciones descripcion="Echar la salsa por encima de los macarrones"/>
+    </recetas>
+</recetario>

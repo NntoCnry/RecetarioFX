@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="view" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1024.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="103.0" prefWidth="600.0" AnchorPane.bottomAnchor="287.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label contentDisplay="RIGHT" text="Nombre:       ">
+               <graphic>
+                  <TextField fx:id="textFieldNombre" />
+               </graphic>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Label>
+            <VBox prefHeight="35.0" prefWidth="590.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label contentDisplay="RIGHT" text="Duración:      ">
+                           <graphic>
+                              <TextField fx:id="textFieldDuracion" prefHeight="25.0" prefWidth="68.0" />
+                           </graphic>
+                        </Label>
+                        <Label contentDisplay="RIGHT" text="minutos">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Label contentDisplay="RIGHT" text="Comensales:  ">
+               <graphic>
+                  <TextField fx:id="textFieldComensales" />
+               </graphic>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </VBox>
+      <HBox layoutY="108.0" prefHeight="295.0" prefWidth="860.0" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="112.0">
+         <children>
+            <TitledPane prefHeight="294.0" prefWidth="500.0" text="Ingredientes" HBox.hgrow="NEVER">
+               <content>
+                  <VBox prefHeight="294.0" prefWidth="474.0">
+                     <children>
+                        <HBox prefHeight="25.0" prefWidth="428.0" VBox.vgrow="SOMETIMES">
+                           <children>
+                              <TextField fx:id="textFieldNombreIngrediente" promptText="Nombre" />
+                              <TextField fx:id="textFieldCantidadIngrediente" prefHeight="25.0" prefWidth="111.0" promptText="Cantidad">
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <ComboBox fx:id="comboBoxMedida" prefHeight="25.0" prefWidth="140.0" HBox.hgrow="NEVER">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </ComboBox>
+                              <Button fx:id="botonAnadirIngrediente" mnemonicParsing="false" onAction="#onClickAñadirIngrediente" text="+">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="botonEliminarIngrediente" mnemonicParsing="false" onAction="#onClickEliminarIngrediente" prefHeight="25.0" prefWidth="23.0" text="-" />
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <TableView fx:id="tableViewIngredientes" editable="true" prefHeight="250.0" prefWidth="452.0" VBox.vgrow="NEVER">
+                          <columns>
+                            <TableColumn fx:id="columnNombreIngrediente" prefWidth="181.0" resizable="false" text="Nombre" />
+                            <TableColumn fx:id="columnCantidadIngrediente" minWidth="-Infinity" prefWidth="142.0" text="Cantiadad" />
+                              <TableColumn fx:id="columnMedidaIngrediente" minWidth="-Infinity" prefWidth="154.0" text="Medida" />
+                          </columns>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </content>
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </TitledPane>
+            <TitledPane prefHeight="308.0" prefWidth="422.0" text="Instrucciones" HBox.hgrow="ALWAYS">
+               <content>
+                  <VBox prefHeight="284.0" prefWidth="448.0">
+                     <children>
+                        <HBox prefHeight="20.0" prefWidth="383.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <TextField fx:id="textFieldDescripcion" prefHeight="25.0" prefWidth="233.0" promptText="Descripción">
+                                 <HBox.margin>
+                                    <Insets left="15.0" right="15.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button fx:id="botonAnadirInstrucciones" mnemonicParsing="false" onAction="#onClickAnadirInstrucciones" text="+">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="botonEliminarInstrucciones" mnemonicParsing="false" onAction="#onClickEliminarInstruccion" prefHeight="25.0" prefWidth="23.0" text="-" />
+                           </children>
+                        </HBox>
+                        <ListView fx:id="listaViewInstrucciones" prefHeight="200.0" prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </ListView>
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+         </children>
+      </HBox>
+      <VBox alignment="BOTTOM_RIGHT" layoutX="779.0" layoutY="422.0" prefHeight="35.0" prefWidth="44.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="779.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="412.0">
+         <children>
+            <Button fx:id="botonAtras" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#onClickAtras" prefHeight="35.0" prefWidth="44.0">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/back-32x32.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
